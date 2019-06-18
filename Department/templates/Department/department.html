@@ -1,0 +1,27 @@
+{% extends "Elective/layout.html" %}
+{% block content %}
+    <!-- <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">{{ object }}</h5>
+            <p class="card-text">{{ object.subject_teacher }}</p>
+            <p class="card-text">Strength: {{ object.minimum_seats }} - {{ object.maximum_seats }}</p>
+            {% if object.syllabus_link %}
+                <a href="{{ object.syllabus_link }}" class="card-link">Syllabus</a>
+            {% endif %}
+        </div>
+    </div>
+
+    <div class="card">
+            <div class="card-header">
+                Applications
+            </div>
+            <ul class="list-group list-group-flush">
+                {% for application in object.departmentelectiveapplication_set.all %}
+                    <li class="list-group-item">{{ application.student.roll_number }} - {{ application.student.name }} : {{ application.cgpa }}</li>
+                {% endfor %}
+            </ul>
+            <div class="card-body">
+                <p class="card-text">Strength: {{ object.minimum_seats }} - {{ object.maximum_seats }}</p>
+            </div>
+        </div> -->
+{% endblock content %}

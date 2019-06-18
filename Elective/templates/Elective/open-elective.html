@@ -1,0 +1,32 @@
+{% extends "Elective/layout.html" %}
+{% block content %}
+    {% for elective in electives %}
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title mb-2">
+                    Open Elective
+                </h5>
+                <!-- <h6 class="card-subtitle mb-2 text-muted">
+                    Batches: {{ elective.batches.all|join:",  " }}
+                </h6> -->
+                <h6 class="card-subtitle text-muted small">
+                    {{ elective.starts|date:"d F, Y " }} - {{ elective.ends|date:" d F, Y" }}
+                </h6>
+            </div>
+            <div class="list-group list-group-flush">
+                {% for subject in elective.elective_subjects.all %}
+                    <a href="{% url 'open_elective_subject' subject.id %}" class="list-group-item list-group-item-action">
+                        {{ subject }}
+                    </a>
+                {% endfor %}
+            </div>
+            {% if user.is_authenticated and user.student and user.student.batch in elective.batches.all %}
+                <div class="card-body">
+                    <a href="{% url 'open_elective_application' elective.id %}" class="btn btn-outline-primary btn-sm">
+                        View Application
+                    </a>
+                </div>
+            {% endif %}
+        </div>
+    {% endfor %}
+{% endblock content %}
