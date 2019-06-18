@@ -1,3 +1,12 @@
 __pycache__/
-migrations/
+Application/migrations/*
+!Application/migrations/__init__.py
+Department/migrations/*
+!Department/migrations/__init__.py
+Elective/migrations/*
+!Elective/migrations/__init__.py
+Subject/migrations/*
+!Subject/migrations/__init__.py
+User/migrations/*
+!User/migrations/__init__.py
 db.sqlite3
